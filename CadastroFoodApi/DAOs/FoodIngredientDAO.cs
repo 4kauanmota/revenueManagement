@@ -6,9 +6,9 @@ using CadastroFoodApi.Models;
 
 namespace CadastroFoodApi.DAOs
 {
-    public class FoodDAO : AutoDAO<Food>
+    public class FoodIngredientDAO : AutoDAO<FoodIngredient>
     {
-        protected override string Tabela => "food";
+        protected override string Tabela => "food_ingredient";
         
     }
 }

@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CadastroFoodApi.Models;
 using CadastroFoodApi.Controllers.Extensoes;
+using CadastroFoodApi.Controllers;
 using CadastroFoodDll.DOs;
 using CadastroFoodApi.DAOs;
 
 namespace CadastroFoodApi.Controllers
 {
-        [ApiController]
+    [ApiController]
     [Route("api/[controller]")]
     public class FoodController : ControllerBase
     {
@@ -48,6 +49,44 @@ namespace CadastroFoodApi.Controllers
 
             return CreatedAtAction(nameof(GetPorId), new { id = objDO.Id }, objDO);
         }
+        
+        // POST: api/Food/Save/Ingredients
+        [HttpPost("Save/Ingredients")]
+        public async Task<ActionResult<FoodIngredient>> SaveFoodIngredient(FoodIngredient objDO)
+        {
+            var objeto = await objDO.ToModel();
+
+            await daoFI.InserirAsync(objeto);
+
+            objDO = objeto.ToDO();
+            
+            Console.WriteLine(objDO.IdIngredient);
+
+            return CreatedAtAction(nameof(GetPorId), new { id = objDO.Id }, objDO);
+        }
+        
+        // GET: api/Food/Ingredients/5
+        [HttpGet("Ingredients/{id}")]
+        public async Task<ActionResult<FoodDO>> GetIngredientFood(string id)
+        {
+            var iControll = new IngredientController();
+            
+            var objetos = await daoFI.RetornarTodosAsync();
+
+            var ingredientes = new List<Ingredient>();
+
+            foreach (var obj in objetos)
+            {
+                if (id == obj.IdFood)
+                {
+                    Console.WriteLine(obj.IdIngredient);
+                    var ing = await daoI.RetornarPorIdAsync(obj.IdIngredient);
+                    ingredientes.Add(ing);
+                }
+            }
+
+            return Ok(ingredientes);
+        }
 
         // PUT: api/Food/5
         [HttpPut("{id}")]
@@ -79,5 +118,7 @@ namespace CadastroFoodApi.Controllers
         }
 
         private FoodDAO dao = new FoodDAO();
+        private FoodIngredientDAO daoFI = new FoodIngredientDAO();
+        private IngredientDAO daoI = new IngredientDAO();
     }
 }

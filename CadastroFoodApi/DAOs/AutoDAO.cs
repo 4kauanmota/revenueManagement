@@ -45,6 +45,11 @@ namespace CadastroFoodApi.DAOs
         {
             return await ExecutarConsultaAsync($"SELECT * FROM {Tabela}");
         }
+        
+        public virtual async Task<IList<T>> RetornarTodosAsyncWhereID(string id)
+        {
+            return await ExecutarConsultaAsync($"SELECT * FROM {Tabela} WHERE IdFood=Id", new { Id=id });
+        }
 
         public virtual async Task<T?> RetornarPorIdAsync(string id)
         {
