@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "RSukS652Vym7CF1YUvx0U/ChCUebw/OQX4Y7OrNZB6P4mVfKJwnVquAPY+7JXwY678Ei5OyjD7yV2uluOuWOvA==",
+  "success": true,
+  "projectFilePath": "D:\\Programs\\blazor-wasm-trabalho\\CadastroFoodDll\\CadastroFoodDll.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\Johnn\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

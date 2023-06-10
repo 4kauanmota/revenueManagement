@@ -1,0 +1,44 @@
+﻿@page "/Food_incluir"
+@using CadastroFoodsWasm.Helpers;
+@using CadastroFoodDll.DOs;
+@inject NavigationManager NavigationManager
+
+<PageTitle>Cadastro de Foods</PageTitle>
+
+<h1>Incluindo Food</h1>
+
+<div>
+    <div>
+        <label class="form-label">Nome</label>
+        <input class="form-control" @bind="@obj.Nome" />
+    </div>
+    <div>
+        <label class="form-label">Altura</label>
+        <input class="form-control" @bind="@obj.Altura" />
+    </div>
+    <div>
+        <label class="form-label">Peso</label>
+        <input class="form-control" @bind="@obj.Peso" />
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-success" @onclick="Gravar">Gravar</button>
+        <a class="ml-1 btn btn-secondary" href="./Foods">Voltar</a>
+    </div>
+    
+</div>
+    
+@code {
+    private AcessoApi<FoodDO> api = new AcessoApi<FoodDO>("api/Food");
+
+    private FoodDO obj = new FoodDO();
+
+    [Parameter]
+    public string Id { get; set; } = "";
+
+    private async void Gravar()
+    {
+        await api.InserirAsync(obj);
+        
+        NavigationManager.NavigateTo("Foods");
+    }
+}

@@ -1,0 +1,89 @@
+﻿@page "/Foods"
+@using CadastroFoodsWasm.Helpers;
+@using CadastroFoodsWasm.Models;
+@using CadastroFoodDll.DOs;
+
+<PageTitle>Cadastro de Foods</PageTitle>
+
+<h1>Foods</h1>
+
+@if (objetos == null)
+{
+    <p><em>Carregando...</em></p>
+}
+else
+{
+    <a class="btn btn-primary" href=@($"./Food_incluir")>Incluir</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in objetos)
+            {
+                <tr>
+                    <td>@obj.Nome</td>
+                    <td>@obj.Altura.ToString("N2")</td>
+                    <td>@obj.Peso.ToString("N2")</td>
+                    <td>
+                        <a class="btn btn-warning" href=@($"./Food_alterar/{obj.Id}")>Alterar</a>
+                        <button class="btn btn-danger" @onclick="() => Excluir(obj.Id)">
+                            Excluir
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    protected async override Task OnInitializedAsync()
+    {        
+        objetos = await api.RetornarTodosAsync();
+    }
+
+    private AcessoApi<FoodDO> api = new AcessoApi<FoodDO>("api/Food");
+
+    private IList<FoodDO>? objetos;
+    
+    private FoodDO objetoAtual = new FoodDO();
+
+    private void Alterar(FoodDO objeto)
+    {
+        objetoAtual = new FoodDO 
+        {
+            Id = objeto.Id, 
+            Nome = objeto.Nome, 
+            Altura = objeto.Altura,
+            Peso = objeto.Peso
+        };
+    }
+
+    private async void Excluir(string? id)
+    {
+        if (id != null)
+        {
+            await api.ExcluirAsync(id);
+            objetos = await api.RetornarTodosAsync();
+            this.StateHasChanged();
+        }
+    }
+
+    private async void Gravar()
+    {
+        if (objetoAtual.Id == null)
+            await api.InserirAsync(objetoAtual);
+        else
+            await api.AlterarAsync(objetoAtual);
+        
+        objetoAtual = new FoodDO();
+        objetos = await api.RetornarTodosAsync();
+        this.StateHasChanged();
+    }
+}
