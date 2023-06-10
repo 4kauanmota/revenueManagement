@@ -20,16 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroAtleta.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9BdGxldGEucmF6b3I=
+[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFood.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroAtletaAlterar.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9BdGxldGFBbHRlcmFyLnJhem9y
+[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodAlterar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kQWx0ZXJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroAtletaIncluir.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9BdGxldGFJbmNsdWlyLnJhem9y
+[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodIncluir.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kSW5jbHVpci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Counter.razor]
