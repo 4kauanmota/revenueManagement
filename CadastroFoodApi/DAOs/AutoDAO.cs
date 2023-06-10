@@ -163,7 +163,7 @@ namespace CadastroFoodApi.DAOs
         {
             //return "SERVER=localhost;DATABASE=teste;UID=root;PASSWORD=aluno;"
             string server = "localhost";
-            string database = "teste";
+            string database = "icomida";
             string uid = "aluno";
             string password = "aluno";
             

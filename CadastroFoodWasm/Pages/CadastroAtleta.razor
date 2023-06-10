@@ -17,9 +17,9 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Nome</th>
-                <th>Altura</th>
-                <th>Peso</th>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Time</th>
                 <th></th>
             </tr>
         </thead>
@@ -27,9 +27,9 @@ else
             @foreach (var obj in objetos)
             {
                 <tr>
-                    <td>@obj.Nome</td>
-                    <td>@obj.Altura.ToString("N2")</td>
-                    <td>@obj.Peso.ToString("N2")</td>
+                    <td>@obj.Name</td>
+                    <td>@obj.Weight.ToString("N2")</td>
+                    <td>@obj.Time.ToString("N2")</td>
                     <td>
                         <a class="btn btn-warning" href=@($"./Food_alterar/{obj.Id}")>Alterar</a>
                         <button class="btn btn-danger" @onclick="() => Excluir(obj.Id)">
@@ -59,9 +59,9 @@ else
         objetoAtual = new FoodDO 
         {
             Id = objeto.Id, 
-            Nome = objeto.Nome, 
-            Altura = objeto.Altura,
-            Peso = objeto.Peso
+            Name = objeto.Name, 
+            Weight = objeto.Weight,
+            Time = objeto.Time
         };
     }
 

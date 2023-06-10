@@ -11,14 +11,14 @@ namespace CadastroFoodDll.DOs
 
         [Required]
         [StringLength(100, ErrorMessage = "O nome deve ter no máximo 100 caracteres.")]        
-        public string Nome { get; set; }
+        public string Name { get; set; }
         
-        [Range(0.9, 3.0,
+        [Range(0, 3,
         ErrorMessage = "A altura deve estar entre 0,9 e 3 metros.")]
-        public double Altura { get; set; }
+        public double Weight { get; set; }
 
-        [Range(20, 500,
+        [Range(10, 500,
         ErrorMessage = "O peso deve estar entre 20 e 500Kg.")]
-        public double Peso { get; set; }
+        public double Time { get; set; }
     }
 }

@@ -7,10 +7,10 @@ namespace CadastroFoodApi.Models
 {
     public class Food : BaseModel
     {
-        public string Nome { get; set; } = "";
+        public string Name { get; set; } = "";
 
-        public double Altura { get; set; }
+        public double Weight { get; set; }
 
-        public double Peso { get; set; }
+        public double Time { get; set; }
     }
 }

@@ -15,9 +15,9 @@ namespace CadastroFoodApi.Controllers.Extensoes
             return new FoodDO
             {
                 Id = obj.Id,
-                Nome = obj.Nome,
-                Altura = obj.Altura,
-                Peso = obj.Peso
+                Name = obj.Name,
+                Weight = obj.Weight,
+                Time = obj.Time
             };
         }
 
@@ -44,9 +44,9 @@ namespace CadastroFoodApi.Controllers.Extensoes
             if (obj == null)
                 obj = new Food();
 
-            obj.Nome = objDO.Nome;
-            obj.Altura = objDO.Altura;
-            obj.Peso = objDO.Peso;
+            obj.Name = objDO.Name;
+            obj.Weight = objDO.Weight;
+            obj.Time = objDO.Time;
 
             return obj;
         }
