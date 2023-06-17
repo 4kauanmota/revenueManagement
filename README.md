@@ -1,6 +1,8 @@
 # blazor-wasm-trabalho
 Segundo trabalho Camilo.
 
+```dotnet run --project <nome-project>```
+
 
 SQL icomida:
 
