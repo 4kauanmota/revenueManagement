@@ -1,9 +1,59 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<main>
+    <div class="content">
+        <div class="featured-organization">
+            <h1>BEST FOOD SITE IN BRAZIL</h1>
+            <div class="featured-categories">
+                <div class="category gradient left-gradient">
+                    <h2>Academic Excellence</h2>
+                    <p>Explore exceptional students who have demonstrated outstanding academic performance across various disciplines.</p>
+                </div>
+                <div class="category gradient left-center-gradient">
+                    <h2>Research Innovators</h2>
+                    <p>Meet the trailblazers who have made remarkable contributions to scientific research.</p>
+                </div>
+                <div class="category gradient right-center-gradient">
+                    <h2>Social Impact Champions</h2>
+                    <p>Learn about students dedicated to creating positive change in society.</p>
+                </div>
+                <div class="category gradient right-gradient">
+                    <h2>Creative Talents Presentation</h2>
+                    <p>Immerse yourself in the world of artistic brilliance.</p>
+                </div>
+                
+                <div class="map-organization left-center-gradient">
+                    <h2 class="order-now">ORDER NOW</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5882.44592077433!2d-43.3554823169605!3d-21.752846925475982!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x989c99efc4c393%3A0x8141eb7a4ce52ea!2sInstituto%20Vianna%20J%C3%BAnior!5e0!3m2!1spt-BR!2sbr!4v1687141678926!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
-Welcome to your new app.
+    <div class="search-form">
+        <input type="text" class="search-input" placeholder="Search foods...">
+        <button class="button">
+            <lord-icon
+                src="https://cdn.lordicon.com/rlizirgt.json"
+                trigger="hover"
+                colors="primary:#555"
+                state="hover"
+                target="button"
+                class="search-icon"
+            >
+            </lord-icon> 
+        </button>
+    </div>
+</main>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<footer>
+    <div>
+        <p>&copy; 2023 IComida. All rights reserved.</p>
+    </div>
+</footer>
+
+@code {
+    
+}

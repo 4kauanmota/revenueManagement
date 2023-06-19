@@ -10,3 +10,15 @@ D:\Programs\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDl
 D:\Programs\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\refint\CadastroFoodDll.dll
 D:\Programs\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.pdb
 D:\Programs\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\ref\CadastroFoodDll.dll
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\bin\Debug\net6.0\CadastroFoodDll.deps.json
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\bin\Debug\net6.0\CadastroFoodDll.dll
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\bin\Debug\net6.0\CadastroFoodDll.pdb
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.csproj.AssemblyReference.cache
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.AssemblyInfoInputs.cache
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.AssemblyInfo.cs
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.csproj.CoreCompileInputs.cache
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.dll
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\refint\CadastroFoodDll.dll
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\CadastroFoodDll.pdb
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodDll\obj\Debug\net6.0\ref\CadastroFoodDll.dll
