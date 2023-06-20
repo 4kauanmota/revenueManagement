@@ -18,8 +18,9 @@ create table food
 
 create table food_ingredient
 (
-    id_comida     varchar(100) null,
-    id_ingredient varchar(100) null
+    Id           varchar(100) null,
+    IdFood       varchar(100) null,
+    IdIngredient varchar(100) null
 );
 
 create table ingredient
