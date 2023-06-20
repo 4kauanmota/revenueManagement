@@ -20,5 +20,11 @@ namespace CadastroFoodDll.DOs
         [Range(10, 500,
         ErrorMessage = "O peso deve estar entre 20 e 500Kg.")]
         public double Time { get; set; }
+        
+        [StringLength(255, ErrorMessage = "O nome deve ter no máximo 100 caracteres.")]
+        public string Description { get; set; } = "";
+        
+        [StringLength(100, ErrorMessage = "O nome deve ter no máximo 100 caracteres.")]
+        public string Preparation { get; set; } = "";
     }
 }

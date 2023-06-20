@@ -17,7 +17,9 @@ namespace CadastroFoodApi.Controllers.Extensoes
                 Id = obj.Id,
                 Name = obj.Name,
                 Weight = obj.Weight,
-                Time = obj.Time
+                Time = obj.Time,
+                Description = obj.Description,
+                Preparation = obj.Preparation,
             };
         }
 
@@ -47,6 +49,8 @@ namespace CadastroFoodApi.Controllers.Extensoes
             obj.Name = objDO.Name;
             obj.Weight = objDO.Weight;
             obj.Time = objDO.Time;
+            obj.Description = objDO.Description;
+            obj.Preparation = objDO.Preparation;
 
             return obj;
         }

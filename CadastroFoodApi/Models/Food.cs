@@ -12,5 +12,9 @@ namespace CadastroFoodApi.Models
         public double Weight { get; set; }
 
         public double Time { get; set; }
+        
+        public string Description { get; set; } = "";
+        
+        public string Preparation { get; set; } = "";
     }
 }
