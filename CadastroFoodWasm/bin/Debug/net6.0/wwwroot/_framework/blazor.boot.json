@@ -197,14 +197,14 @@
       "netstandard.dll": "sha256-CgGkoZQx73t3qchcsu85kgBcgrjNEOiudArOwKNb18k=",
       "System.Private.CoreLib.dll": "sha256-6nUSjiT7okMlkN897OnDypwppYuK7JxTahOClXkAuwE=",
       "CadastroFoodDll.dll": "sha256-mRaNXNqtTZF8z2NYcjJHnw32Ylado\/PSXisnnyA7jP4=",
-      "CadastroFoodWasm.dll": "sha256-47DFSbPFjFpn7OitQ66oYVtt7BX\/xgmlmJgQ+3sL63s="
+      "CadastroFoodWasm.dll": "sha256-N7yNWa7\/hmaY3xvjx3eXE+YgwXXNmkSNmYcd8FdYjM4="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "CadastroFoodDll.pdb": "sha256-nEyC5piabt6kdsV3l5BLtUoYGAuQt19qccTh26WiBWY=",
-      "CadastroFoodWasm.pdb": "sha256-eh\/rDaoQnN0d4Etxh7kvBHbOO6W3P1ZYwz9RzE9q7h0="
+      "CadastroFoodWasm.pdb": "sha256-BEAvwkO908Z+1JkE3UCvT+qsXkFXR\/HHnM1NGd2UJXI="
     },
     "runtime": {
       "dotnet.6.0.16.fbkzlg1dte.js": "sha256-GT2gK+GjOisRXJY+9yh6H8s6K\/KDIsaFMFIgWvAnttY=",

@@ -20,10 +20,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFood.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodAlterar.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kQWx0ZXJhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +32,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/IngredientAlter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5ncmVkaWVudEFsdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/IngredientInclude.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5ncmVkaWVudEluY2x1ZGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,6 +47,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFood.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-qtpulujwe8
 
 [C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Help.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVscC5yYXpvcg==

@@ -1656,3 +1656,4 @@ C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm
 C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm\obj\Debug\net6.0\ref\CadastroFoodWasm.dll
 C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm\obj\Debug\net6.0\scopedcss\Pages\Help.razor.rz.scp.css
 C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm\obj\Debug\net6.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm\obj\Debug\net6.0\scopedcss\Pages\CadastroFood.razor.rz.scp.css
