@@ -1,63 +1,160 @@
-﻿@page "/Food_alterar/{Id}"
+﻿@page "/food/alter/{Id}"
 @using CadastroFoodsWasm.Helpers;
 @using CadastroFoodDll.DOs;
+@using CadastroIngredientDll.DOs
 @inject NavigationManager NavigationManager
 
-<PageTitle>Cadastro de Foods</PageTitle>
+<PageTitle>Alter Food</PageTitle>
 
-<h1>Foods</h1>
+<main>
+    @if (obj == null)
+    {
+        <p><em>Carregando...</em></p>
+    }
+    else
+    {
+        <EditForm Model="@obj" OnValidSubmit="@Gravar">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+            <div>
+                <div>
+                    <label class="form-label">Name</label>
+                    <input class="form-control" @bind="@obj.Name" />
+                    <ValidationMessage For="() => obj.Name" />
+                </div>
+                
+                <div>
+                    <label class="form-label">Description</label>
+                    <input class="form-control" @bind="@obj.Description" />
+                    <ValidationMessage For="() => obj.Time" />
+                </div>
+                
+                <div>
+                    <label class="form-label">Weight</label>
+                    <input class="form-control" @bind="@obj.Weight" />
+                    <ValidationMessage For="() => obj.Weight" />
+                </div>
+                
+                <div>
+                    <label class="form-label">Time</label>
+                    <input class="form-control" @bind="@obj.Time" />
+                    <ValidationMessage For="() => obj.Time" />
+                </div>
+                
+                <div>
+                    <label class="form-label">Preparation</label>
+                    <input class="form-control" @bind="@obj.Preparation" />
+                    <ValidationMessage For="() => obj.Time" />
+                </div>
+                
+                <div>
+                    <label class="form-label">Ingredients</label><br/>
+                    <select multiple="multiple">
+                        @foreach (var ingredient in ingredients)
+                        {
+                            @foreach (var i in fiTest)
+                            {
+                                if (ingredient.Id != i.Id)
+                                {
+                                    cont1++;
+                                }
+                                cont2++;
+                            }
+                            if (cont1 == cont2)
+                            {
+                                <option value="@ingredient.Id" @onclick=@((e) => OptionClickEvent(@ingredient.Id,e))>@ingredient.Name</option>
+                            }
+                            cont1 = 0;
+                            cont2 = 0;
+                        }
+                    </select>
+                </div>
+                
+                <ul>
+                    @foreach (var i in fiTest)
+                    {
+                        <li>
+                            <p>@i.Name</p>
+                        </li>
+                        <button class="btn btn-danger" @onclick="() => Excluir(i.Id)">
+                            Excluir
+                        </button>
+                    }
+                </ul>
 
-@if (obj == null)
-{
-    <p><em>Carregando...</em></p>
-}
-else
-{
-    <EditForm Model="@obj" OnValidSubmit="@Gravar">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-        <div>
-            <div>
-                <label class="form-label">Name</label>
-                <input class="form-control" @bind="@obj.Name" />
-                <ValidationMessage For="() => obj.Name" />
+                <div class="mt-2">
+                    <button class="btn btn-success" type="submit">Alter</button>
+                    <a class="ml-1 btn btn-secondary" href="./Foods">Back</a>
+                </div>
+    
+                <Imagem Entidade="Food" Id=@Id />
+                
             </div>
-            <div>
-                <label class="form-label">Weight</label>
-                <input class="form-control" @bind="@obj.Weight" />
-                <ValidationMessage For="() => obj.Weight" />
-            </div>
-            <div>
-                <label class="form-label">Time</label>
-                <input class="form-control" @bind="@obj.Time" />
-                <ValidationMessage For="() => obj.Time" />
-            </div>
-            <div class="mt-2">
-                <button class="btn btn-success" type="submit">Gravar</button>
-                <a class="ml-1 btn btn-secondary" href="./Foods">Voltar</a>
-            </div>
-
-            <Imagem Entidade="Food" Id=@Id />
-            
-        </div>
-    </EditForm>
-}
+        </EditForm>
+    }
+</main>
 
 @code {
     protected async override Task OnInitializedAsync()
     {        
         obj = await api.RetornarPorIdAsync(Id);
+        ingredients = await apiIngredient.RetornarTodosAsync();
+        fi = await apiFI.RetornarTodosAsync();
+        fiTest = await apiTest.RetornarTodosPorIdAsync(obj.Id);
     }
 
-    private AcessoApi<FoodDO> api = new AcessoApi<FoodDO>("api/Food");
+    public void OptionClickEvent(string values, MouseEventArgs evnt)
+    {
+        if (evnt.CtrlKey)
+        {
+            myHolder.Add(values);
+        }
+    }
+    
+    private async void Excluir(string? id)
+    {
+        if (id != null)
+        {
+            string route = $"{obj.Id}/Ingredient/{id}";
+            await api.ExcluirAsync(route);
+        }
+    }
+
+    public int cont1 = 0;
+    public int cont2 = 0;
+        
+    private List<string> myHolder = new List<string>();
+
+    private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
+    
+    private IngredientDO objIngredient = new();
+    
+    public IList<IngredientDO>? ingredients;
+    public IList<FoodIngredientDO>? fi;
+    public IList<IngredientDO>? fiTest;
+
+    private AcessoApi<FoodDO> api = new("api/Food");
+    private AcessoApi<FoodIngredientDO> apiFI = new("api/Food/Save/Ingredients");
+    
+    private AcessoApi<IngredientDO> apiTest = new("api/Food/Ingredients");
 
     private FoodDO? obj = null;
 
     [Parameter]
     public string Id { get; set; } = "";
-
+    
+    
     private async void Gravar()
     {
+        foreach (var ingredient in myHolder)
+        {
+            FoodIngredientDO fi = new();
+            fi.IdIngredient = ingredient;
+            fi.IdFood = obj.Id;
+                
+            apiFI.InserirAsync(fi);
+        }
+        
         await api.AlterarAsync(obj);
         
         NavigationManager.NavigateTo("Foods");

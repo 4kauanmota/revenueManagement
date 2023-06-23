@@ -1,4 +1,26 @@
-﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@font-face{
+    font-family: "Montserrat";
+    src: url("./font/Montserrat-Regular.ttf");
+}
+
+@font-face{
+    font-family: "Poetsen";
+    src: url("./font/PoetsenOne-Regular.ttf");
+}
+
+:root {
+    --main-red: #B73E3E;
+    --secondary-red: #DD5353;
+    --main-orange: #F79327;
+    --main-yellow: #FFDC71;
+    
+    --main-white: #fff;
+    --main-black: #000;
+}
+
+*{
+    font-family: Montserrat, sans-serif;
+}
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

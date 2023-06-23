@@ -40,6 +40,13 @@ namespace CadastroFoodApi.DAOs
 
             await ExecutarComandoAsync(sql, new { Id = id });
         }
+        
+        public virtual async Task ExcluirFoodIngredientAsync(string idFood, string idIngredient)
+        {
+            var sql = $"DELETE FROM {Tabela} WHERE IdFood=@IdFood and IdIngredient=@IdIngredient";
+
+            await ExecutarComandoAsync(sql, new { IdFood = idFood, IdIngredient = idIngredient });
+        }
 
         public virtual async Task<IList<T>> RetornarTodosAsync()
         {

@@ -1,9 +1,57 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<main>
+    <div class="content">
+        <div class="featured-organization">
+            <h1>Best Food Site In Brazil</h1>
+            <div class="featured-categories">
+                <div class="category gradient left-gradient">
+                    <h2>Academic Excellence</h2>
+                    <p>Explore exceptional students who have demonstrated outstanding academic performance across various disciplines.</p>
+                </div>
+                <div class="category gradient left-center-gradient">
+                    <h2>Research Innovators</h2>
+                    <p>Meet the trailblazers who have made remarkable contributions to scientific research.</p>
+                </div>
+                <div class="category gradient right-center-gradient">
+                    <h2>Social Impact Champions</h2>
+                    <p>Learn about students dedicated to creating positive change in society.</p>
+                </div>
+                <div class="category gradient right-gradient">
+                    <h2>Creative Talents Presentation</h2>
+                    <p>Immerse yourself in the world of artistic brilliance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-Welcome to your new app.
+    <div class="search-form">
+        <input type="text" class="search-input" placeholder="Search foods...">
+        <button class="button">
+            <lord-icon
+                src="https://cdn.lordicon.com/rlizirgt.json"
+                trigger="hover"
+                colors="primary:#555"
+                state="hover"
+                target="button"
+                class="search-icon"
+            >
+            </lord-icon> 
+        </button>
+    </div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <div class="orderOrganization">
+    </div>
+</main>
+
+<footer>
+    <div>
+        <p>&copy; 2023 IComida. All rights reserved.</p>
+    </div>
+</footer>
+
+@code {
+    private string selectedSlide = "2";
+}

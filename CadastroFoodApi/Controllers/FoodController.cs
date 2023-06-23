@@ -116,6 +116,15 @@ namespace CadastroFoodApi.Controllers
             
             return NoContent();
         }
+        
+        // DELETE: api/Food/5/Ingredient/5
+        [HttpDelete("{idFood}/Ingredient/{idIngredient}")]
+        public async Task<IActionResult> DeleteIngredientFood(string idFood, string idIngredient)
+        {
+            await daoFI.ExcluirFoodIngredientAsync(idFood, idIngredient);
+
+            return NoContent();
+        }
 
         private FoodDAO dao = new FoodDAO();
         private FoodIngredientDAO daoFI = new FoodIngredientDAO();

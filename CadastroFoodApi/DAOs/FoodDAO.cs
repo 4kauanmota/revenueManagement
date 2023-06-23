@@ -9,6 +9,5 @@ namespace CadastroFoodApi.DAOs
     public class FoodDAO : AutoDAO<Food>
     {
         protected override string Tabela => "food";
-        
     }
 }

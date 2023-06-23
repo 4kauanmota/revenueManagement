@@ -1,0 +1,93 @@
+﻿main{
+    height: 91vh;
+    padding-left: 2rem;
+}
+
+section > div{
+    margin: 0 0 2rem 0;
+}
+
+.help-content {
+    height: 100%;
+    padding: 20px;
+}
+
+h1{
+    font-family: Poetsen, Montserrat, sans-serif;
+    background-color: var(--secondary-red);
+    color: var(--main-white);
+    font-weight: bold;
+    margin: 0 0 2rem 0;
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    box-shadow: -2px 2px 0 2px var(--main-black);
+    border-radius: 4px;
+}
+
+h2{
+    padding: 0.5rem 0 0 1rem;
+    font-weight: bold;
+}
+
+@keyframes gradientAnim{
+    to{
+        background-position: 100%;
+    }
+}
+
+.gradient{
+    animation: gradientAnim 5s linear infinite;
+    background: linear-gradient(to right, var(--secondary-red), var(--main-orange), var(--main-yellow), var(--secondary-red), var(--main-orange), var(--main-yellow));
+    background-size: 300% 100%;
+
+    width: 70%;
+    height: 0.5rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+}
+
+.faq ul{
+    list-style: none;
+}
+
+.faq li {
+    margin-bottom: 20px;
+}
+
+.phone-number {
+    font-weight: bold;
+}
+
+.contact-info div{
+    padding: 0 0 0 2rem;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+}
+
+footer{
+    height: calc(9vh - 1.1rem);
+    width: calc(100% + 1.5rem);
+}
+
+footer div{
+    background-color: #333;
+    color: var(--main-white);
+    text-align: center;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div p{
+    margin: 0;
+}

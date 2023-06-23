@@ -1,0 +1,41 @@
+﻿@page "/ingredient/include"
+@using CadastroFoodsWasm.Helpers;
+@using CadastroFoodDll.DOs;
+@using CadastroIngredientDll.DOs
+@inject NavigationManager NavigationManager
+
+<PageTitle>New Ingredient</PageTitle>
+
+<main>
+    <div>
+        <div>
+            <label class="form-label">Name</label>
+            <input class="form-control" @bind="@objIngredient.Name" />
+        </div>
+
+        <div>
+            <label class="form-label">Weight</label>
+            <input class="form-control" @bind="@objIngredient.Weight" />
+        </div>
+        
+        <div class="mt-2">
+            <button class="btn btn-success" @onclick="Gravar">Register</button>
+            <a class="ml-1 btn btn-secondary" href="./Foods">Back</a>
+        </div>
+    </div>
+</main>
+
+@code {
+    private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
+    private IngredientDO objIngredient = new();
+
+    [Parameter]
+    public string Id { get; set; } = "";
+
+    private async void Gravar()
+    {
+        await apiIngredient.InserirAsync(objIngredient);
+        
+        NavigationManager.NavigateTo("Foods");
+    }
+}

@@ -39,6 +39,28 @@ namespace CadastroFoodsWasm.Helpers
             else
                 return null;
         }
+        
+        public async Task<IList<T>?> RetornarTodosPorIdAsync(string id)
+        {
+            var request = new HttpRequestMessage(HttpMethod.Get, api + $"/{id}");
+        
+            var response = await cliente.SendAsync(request);
+
+            if (response.IsSuccessStatusCode)
+            {
+                using var responseStream = await response.Content.ReadAsStreamAsync();
+                
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+                
+                return await JsonSerializer.DeserializeAsync
+                    <IList<T>>(responseStream, options);
+            }
+            else
+                return null;
+        }
 
         public async Task<T?> RetornarPorIdAsync(string id)
         {

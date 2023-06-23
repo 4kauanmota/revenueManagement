@@ -9,7 +9,7 @@ main[b-v5slr0hzdi] {
 }
 
 .sidebar[b-v5slr0hzdi] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    background-color: var(--secondary-red);
 }
 
 .top-row[b-v5slr0hzdi] {
@@ -75,7 +75,6 @@ main[b-v5slr0hzdi] {
     }
 
     .top-row[b-v5slr0hzdi], article[b-v5slr0hzdi] {
-        padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
 }

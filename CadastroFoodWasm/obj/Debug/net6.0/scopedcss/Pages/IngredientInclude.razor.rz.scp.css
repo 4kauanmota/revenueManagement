@@ -1,0 +1,13 @@
+main[b-hfou64ffx8]{
+    height: 91vh;
+    padding: 1.1rem 0 0 2rem;
+    margin: 0 20px 0 20px;
+}
+
+input[b-hfou64ffx8], select[b-hfou64ffx8], button[b-hfou64ffx8], a[b-hfou64ffx8]{
+    margin: 0 0 2rem 0;
+}
+
+select[b-hfou64ffx8]{
+    width: 100%;
+}

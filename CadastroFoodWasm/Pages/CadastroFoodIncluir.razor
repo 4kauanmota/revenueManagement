@@ -3,34 +3,46 @@
 @using CadastroFoodDll.DOs;
 @inject NavigationManager NavigationManager
 
-<PageTitle>Cadastro de Foods</PageTitle>
+<PageTitle>New Food</PageTitle>
 
-<h1>Incluindo Food</h1>
+<main>
+    <div>
+        <div>
+            <label class="form-label">Name</label>
+            <input class="form-control" @bind="@obj.Name" />
+        </div>
 
-<div>
-    <div>
-        <label class="form-label">Name</label>
-        <input class="form-control" @bind="@obj.Name" />
+        <div>
+            <label class="form-label">Description</label>
+            <input class="form-control" @bind="@obj.Description" />
+        </div>
+        
+        <div>
+            <label class="form-label">Weight</label>
+            <input class="form-control" @bind="@obj.Weight" />
+        </div>
+        
+        <div>
+            <label class="form-label">Time</label>
+            <input class="form-control" @bind="@obj.Time" />
+        </div>
+
+        <div>
+            <label class="form-label">Preparation</label>
+            <input class="form-control" @bind="@obj.Preparation" />
+        </div>
+
+        <div class="mt-2">
+            <button class="btn btn-success" @onclick="Gravar">Register</button>
+            <a class="ml-1 btn btn-secondary" href="./Foods">Back</a>
+        </div>
     </div>
-    <div>
-        <label class="form-label">Weight</label>
-        <input class="form-control" @bind="@obj.Weight" />
-    </div>
-    <div>
-        <label class="form-label">Time</label>
-        <input class="form-control" @bind="@obj.Time" />
-    </div>
-    <div class="mt-2">
-        <button class="btn btn-success" @onclick="Gravar">Gravar</button>
-        <a class="ml-1 btn btn-secondary" href="./Foods">Voltar</a>
-    </div>
-    
-</div>
-    
+</main>
+
 @code {
-    private AcessoApi<FoodDO> api = new AcessoApi<FoodDO>("api/Food");
+    private AcessoApi<FoodDO> api = new("api/Food");
 
-    private FoodDO obj = new FoodDO();
+    private FoodDO obj = new();
 
     [Parameter]
     public string Id { get; set; } = "";
@@ -38,7 +50,7 @@
     private async void Gravar()
     {
         await api.InserirAsync(obj);
-        
-        NavigationManager.NavigateTo("Foods");
+
+        NavigationManager.NavigateTo($"Foods");
     }
 }

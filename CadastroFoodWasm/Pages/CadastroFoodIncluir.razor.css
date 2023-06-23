@@ -1,0 +1,13 @@
+﻿main{
+    height: 91vh;
+    padding: 1.1rem 0 0 2rem;
+    margin: 0 20px 0 20px;
+}
+
+input, select{
+    margin: 0 0 2rem 0;
+}
+
+select{
+    width: 100%;
+}

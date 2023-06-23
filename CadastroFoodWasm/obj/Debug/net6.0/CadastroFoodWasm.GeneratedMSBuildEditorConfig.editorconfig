@@ -9,57 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = CadastroFoodWasm
 build_property.RootNamespace = CadastroFoodWasm
-build_property.ProjectDir = D:\Programs\blazor-wasm-trabalho\CadastroFoodWasm\
+build_property.ProjectDir = C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Programs\blazor-wasm-trabalho\CadastroFoodWasm
+build_property.MSBuildProjectDirectory = C:\Users\4then\Desktop\All\trabalhoCamillo\blazor-wasm-trabalho\CadastroFoodWasm
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/App.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFood.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodAlterar.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kQWx0ZXJhci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodIncluir.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kSW5jbHVpci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Imagem.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Imagem.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW1hZ2VtLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Shared/SurveyPrompt.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/_Imports.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Shared/MainLayout.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFood.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-qtpulujwe8
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodAlterar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kQWx0ZXJhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-1xz6py6m75
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/CadastroFoodIncluir.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FkYXN0cm9Gb29kSW5jbHVpci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-nmssjhwiq0
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Help.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVscC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-2k1u0pogd6
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7pb9w7e38f
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/IngredientAlter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5ncmVkaWVudEFsdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-9otar8zphk
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Pages/IngredientInclude.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5ncmVkaWVudEluY2x1ZGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hfou64ffx8
+
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-v5slr0hzdi
 
-[D:/Programs/blazor-wasm-trabalho/CadastroFoodWasm/Shared/NavMenu.razor]
+[C:/Users/4then/Desktop/All/trabalhoCamillo/blazor-wasm-trabalho/CadastroFoodWasm/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-iz7669l4a7
