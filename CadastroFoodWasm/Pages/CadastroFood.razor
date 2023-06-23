@@ -7,7 +7,7 @@
 <PageTitle>Buy</PageTitle>
 
 <main>
-    @if (objetos == null)
+    @if (foods == null)
     {
         <p><em>Carregando...</em></p>
     }
@@ -34,7 +34,7 @@
             </button>
         </div>
 
-        @if (isFood)
+        @if (!switchTable)
         {
             <table class="table">
                 <thead>
@@ -49,16 +49,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach (var obj in objetos)
+                @foreach (var food in foods)
                 {
                     <tr>
-                        <td>@obj.Name</td>
-                        <td>@obj.Description</td>
-                        <td>@obj.Weight.ToString("N2")</td>
-                        <td>@obj.Time.ToString("N2")</td>
-                        <td>@obj.Preparation</td>
+                        <td>@food.Name</td>
+                        <td>@food.Description</td>
+                        <td>@food.Weight.ToString("N2")</td>
+                        <td>@food.Time.ToString("N2")</td>
+                        <td>@food.Preparation</td>
                         <td>
-                            <a class="tableButton tbAlt" href=@($"./food/alter/{obj.Id}")>
+                            <a class="tableButton tbAlt" href=@($"./food/alter/{food.Id}")>
                                 <lord-icon
                                     src="https://cdn.lordicon.com/frjgvxce.json"
                                     trigger="hover"
@@ -70,7 +70,7 @@
                             </a>
                         </td>
                         <td>
-                            <button class="tableButton tbEx" @onclick="() => Excluir(obj.Id)">
+                            <button class="tableButton tbEx" @onclick="() => ExcluirFood(food.Id)">
                                 <lord-icon
                                         src="https://cdn.lordicon.com/jmkrnisz.json"
                                         trigger="morph"
@@ -116,7 +116,7 @@
                             </a>
                         </td>
                         <td>
-                            <button class="tableButton tbEx" @onclick="() => ExcluirI(ingredient.Id)">
+                            <button class="tableButton tbEx" @onclick="() => ExcluirIngredient(ingredient.Id)">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/jmkrnisz.json"
                                     trigger="morph"
@@ -137,69 +137,42 @@
 
 
 @code {
-    protected async override Task OnInitializedAsync()
-    {        
-        objetos = await api.RetornarTodosAsync();
-        ingredients = await apiI.RetornarTodosAsync();
-    }
+    public bool switchTable;
 
-    public bool isFood = true;
-
-    private AcessoApi<FoodDO> api = new AcessoApi<FoodDO>("api/Food");
-    private AcessoApi<IngredientDO> apiI = new AcessoApi<IngredientDO>("api/Ingredient");
-
-    private IList<FoodDO>? objetos;
+    private IList<FoodDO>? foods;
     private IList<IngredientDO>? ingredients;
     
-    private FoodDO objetoAtual = new FoodDO();
-
-    private void Alterar(FoodDO objeto)
-    {
-        objetoAtual = new FoodDO 
-        {
-            Id = objeto.Id, 
-            Name = objeto.Name, 
-            Description = objeto.Description,
-            Weight = objeto.Weight,
-            Time = objeto.Time,
-            Preparation = objeto.Preparation
-        };
+    private AcessoApi<FoodDO> apiFood = new("api/Food");
+    private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
+    
+    protected async override Task OnInitializedAsync()
+    {        
+        foods = await apiFood.RetornarTodosAsync();
+        ingredients = await apiIngredient.RetornarTodosAsync();
     }
 
-    private async void Excluir(string? id)
+    private async void ExcluirFood(string? id)
     {
         if (id != null)
         {
-            await api.ExcluirAsync(id);
-            objetos = await api.RetornarTodosAsync();
+            await apiFood.ExcluirAsync(id);
+            foods = await apiFood.RetornarTodosAsync();
             this.StateHasChanged();
         }
     }
 
-    private IngredientDO ingredientAtual = new IngredientDO(); 
-    
-    private void AlterarI(IngredientDO objeto)
-    {
-        ingredientAtual = new IngredientDO() 
-        {
-            Id = objeto.Id, 
-            Name = objeto.Name,
-            Weight = objeto.Weight,
-        };
-    }
-
-    private async void ExcluirI(string? id)
+    private async void ExcluirIngredient(string? id)
     {
         if (id != null)
         {
-            await apiI.ExcluirAsync(id);
-            ingredients = await apiI.RetornarTodosAsync();
+            await apiIngredient.ExcluirAsync(id);
+            ingredients = await apiIngredient.RetornarTodosAsync();
             this.StateHasChanged();
         }
     }
     
     private void Switch()
     {
-        isFood = !isFood;
+        switchTable = !switchTable;
     }
 }

@@ -39,17 +39,17 @@
 </main>
 
 @code {
+    [Parameter]
+    public string Id { get; set; } = "";
+    
+    private IngredientDO? obj;
+    
+    private AcessoApi<IngredientDO> api = new("api/Ingredient");
+    
     protected async override Task OnInitializedAsync()
     {        
         obj = await api.RetornarPorIdAsync(Id);
     }
-
-    private AcessoApi<IngredientDO> api = new("api/Ingredient");
-
-    private IngredientDO? obj = null;
-
-    [Parameter]
-    public string Id { get; set; } = "";
 
     private async void Gravar()
     {

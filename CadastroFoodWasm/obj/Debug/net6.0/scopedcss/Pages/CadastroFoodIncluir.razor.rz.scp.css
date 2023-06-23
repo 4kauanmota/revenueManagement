@@ -1,7 +1,8 @@
 main[b-nmssjhwiq0]{
-    height: 91vh;
+    height: 98vh;
     padding: 1.1rem 0 0 2rem;
     margin: 0 20px 0 20px;
+    overflow: auto;
 }
 
 input[b-nmssjhwiq0], select[b-nmssjhwiq0]{

@@ -29,9 +29,6 @@
     private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
     private IngredientDO objIngredient = new();
 
-    [Parameter]
-    public string Id { get; set; } = "";
-
     private async void Gravar()
     {
         await apiIngredient.InserirAsync(objIngredient);

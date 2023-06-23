@@ -9,27 +9,27 @@
     <div>
         <div>
             <label class="form-label">Name</label>
-            <input class="form-control" @bind="@obj.Name" />
+            <input class="form-control" @bind="@food.Name" />
         </div>
 
         <div>
             <label class="form-label">Description</label>
-            <input class="form-control" @bind="@obj.Description" />
+            <input class="form-control" @bind="@food.Description" />
         </div>
         
         <div>
             <label class="form-label">Weight</label>
-            <input class="form-control" @bind="@obj.Weight" />
+            <input class="form-control" @bind="@food.Weight" />
         </div>
         
         <div>
             <label class="form-label">Time</label>
-            <input class="form-control" @bind="@obj.Time" />
+            <input class="form-control" @bind="@food.Time" />
         </div>
 
         <div>
             <label class="form-label">Preparation</label>
-            <input class="form-control" @bind="@obj.Preparation" />
+            <input class="form-control" @bind="@food.Preparation" />
         </div>
 
         <div class="mt-2">
@@ -40,16 +40,13 @@
 </main>
 
 @code {
-    private AcessoApi<FoodDO> api = new("api/Food");
-
-    private FoodDO obj = new();
-
-    [Parameter]
-    public string Id { get; set; } = "";
+    private FoodDO food = new();
+    
+    private AcessoApi<FoodDO> apiFood = new("api/Food");
 
     private async void Gravar()
     {
-        await api.InserirAsync(obj);
+        await apiFood.InserirAsync(food);
 
         NavigationManager.NavigateTo($"Foods");
     }

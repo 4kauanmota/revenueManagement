@@ -1,7 +1,8 @@
 main[b-qtpulujwe8]{
-    height: 91vh;
+    height: 98vh;
     padding: 1.1rem 0 0 2rem;
     margin: 0 20px 0 20px;
+    overflow: auto;
 }
 
 .none[b-qtpulujwe8]{
@@ -66,10 +67,6 @@ main[b-qtpulujwe8]{
 
 lord-icon[b-qtpulujwe8]{
     transform: scale(1.3);
-}
-
-table[b-qtpulujwe8]{
-    overflow: auto;
 }
 
 td[b-qtpulujwe8]{

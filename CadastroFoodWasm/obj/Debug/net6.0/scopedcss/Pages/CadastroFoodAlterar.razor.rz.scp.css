@@ -1,7 +1,8 @@
 main[b-1xz6py6m75]{
-    height: 91vh;
+    height: 98vh;
     padding: 1.1rem 0 0 2rem;
     margin: 0 20px 0 20px;
+    overflow: auto;
 }
 
 input[b-1xz6py6m75], select[b-1xz6py6m75], button[b-1xz6py6m75], a[b-1xz6py6m75]{
@@ -10,5 +11,10 @@ input[b-1xz6py6m75], select[b-1xz6py6m75], button[b-1xz6py6m75], a[b-1xz6py6m75]
 
 select[b-1xz6py6m75]{
     width: 100%;
+}
+
+.ingredients-organization[b-1xz6py6m75]{
+    display: flex;
+    justify-content: space-evenly;
 }
 

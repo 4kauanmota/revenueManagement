@@ -7,44 +7,44 @@
 <PageTitle>Alter Food</PageTitle>
 
 <main>
-    @if (obj == null)
+    @if (food == null)
     {
         <p><em>Carregando...</em></p>
     }
     else
     {
-        <EditForm Model="@obj" OnValidSubmit="@Gravar">
+        <EditForm Model="@food" OnValidSubmit="@Gravar">
         <DataAnnotationsValidator />
         <ValidationSummary />
             <div>
                 <div>
                     <label class="form-label">Name</label>
-                    <input class="form-control" @bind="@obj.Name" />
-                    <ValidationMessage For="() => obj.Name" />
+                    <input class="form-control" @bind="@food.Name" />
+                    <ValidationMessage For="() => food.Name" />
                 </div>
                 
                 <div>
                     <label class="form-label">Description</label>
-                    <input class="form-control" @bind="@obj.Description" />
-                    <ValidationMessage For="() => obj.Time" />
+                    <input class="form-control" @bind="@food.Description" />
+                    <ValidationMessage For="() => food.Time" />
                 </div>
                 
                 <div>
                     <label class="form-label">Weight</label>
-                    <input class="form-control" @bind="@obj.Weight" />
-                    <ValidationMessage For="() => obj.Weight" />
+                    <input class="form-control" @bind="@food.Weight" />
+                    <ValidationMessage For="() => food.Weight" />
                 </div>
                 
                 <div>
                     <label class="form-label">Time</label>
-                    <input class="form-control" @bind="@obj.Time" />
-                    <ValidationMessage For="() => obj.Time" />
+                    <input class="form-control" @bind="@food.Time" />
+                    <ValidationMessage For="() => food.Time" />
                 </div>
                 
                 <div>
                     <label class="form-label">Preparation</label>
-                    <input class="form-control" @bind="@obj.Preparation" />
-                    <ValidationMessage For="() => obj.Time" />
+                    <input class="form-control" @bind="@food.Preparation" />
+                    <ValidationMessage For="() => food.Time" />
                 </div>
                 
                 <div>
@@ -52,33 +52,33 @@
                     <select multiple="multiple">
                         @foreach (var ingredient in ingredients)
                         {
-                            @foreach (var i in fiTest)
+                            @foreach (var i in foodIngredients)
                             {
                                 if (ingredient.Id != i.Id)
                                 {
-                                    cont1++;
+                                    cont++;
                                 }
-                                cont2++;
+                                contAux++;
                             }
-                            if (cont1 == cont2)
+                            if (cont == contAux)
                             {
                                 <option value="@ingredient.Id" @onclick=@((e) => OptionClickEvent(@ingredient.Id,e))>@ingredient.Name</option>
                             }
-                            cont1 = 0;
-                            cont2 = 0;
+                            cont = 0;
+                            contAux = 0;
                         }
                     </select>
                 </div>
                 
-                <ul>
-                    @foreach (var i in fiTest)
+                <ul class="ingredients-organization">
+                    @foreach (var i in foodIngredients)
                     {
                         <li>
                             <p>@i.Name</p>
+                            <button class="btn btn-danger" @onclick="() => Excluir(i.Id)">
+                                Take out
+                            </button>
                         </li>
-                        <button class="btn btn-danger" @onclick="() => Excluir(i.Id)">
-                            Excluir
-                        </button>
                     }
                 </ul>
 
@@ -95,68 +95,64 @@
 </main>
 
 @code {
+    [Parameter]
+    public string Id { get; set; } = "";
+    
+    public int cont;
+    public int contAux;
+    
+    private FoodDO? food;
+    
+    public IList<IngredientDO>? ingredients;
+    public IList<IngredientDO>? foodIngredients;
+
+    private AcessoApi<FoodDO> apiFood = new("api/Food");
+    private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
+    private AcessoApi<IngredientDO> apiIngredientInFood = new("api/Food/Ingredients");
+    private AcessoApi<FoodIngredientDO> apiFoodIngredient = new("api/Food/Save/Ingredients");
+
+    private List<string> newIngredients = new();
+
     protected async override Task OnInitializedAsync()
     {        
-        obj = await api.RetornarPorIdAsync(Id);
+        food = await apiFood.RetornarPorIdAsync(Id);
         ingredients = await apiIngredient.RetornarTodosAsync();
-        fi = await apiFI.RetornarTodosAsync();
-        fiTest = await apiTest.RetornarTodosPorIdAsync(obj.Id);
+        foodIngredients = await apiIngredientInFood.RetornarTodosPorIdAsync(food.Id);
     }
 
-    public void OptionClickEvent(string values, MouseEventArgs evnt)
-    {
-        if (evnt.CtrlKey)
-        {
-            myHolder.Add(values);
-        }
-    }
-    
     private async void Excluir(string? id)
     {
         if (id != null)
         {
-            string route = $"{obj.Id}/Ingredient/{id}";
-            await api.ExcluirAsync(route);
+            string route = $"{food.Id}/Ingredient/{id}";
+            await apiFood.ExcluirAsync(route);
         }
     }
 
-    public int cont1 = 0;
-    public int cont2 = 0;
-        
-    private List<string> myHolder = new List<string>();
-
-    private AcessoApi<IngredientDO> apiIngredient = new("api/Ingredient");
-    
-    private IngredientDO objIngredient = new();
-    
-    public IList<IngredientDO>? ingredients;
-    public IList<FoodIngredientDO>? fi;
-    public IList<IngredientDO>? fiTest;
-
-    private AcessoApi<FoodDO> api = new("api/Food");
-    private AcessoApi<FoodIngredientDO> apiFI = new("api/Food/Save/Ingredients");
-    
-    private AcessoApi<IngredientDO> apiTest = new("api/Food/Ingredients");
-
-    private FoodDO? obj = null;
-
-    [Parameter]
-    public string Id { get; set; } = "";
-    
-    
     private async void Gravar()
     {
-        foreach (var ingredient in myHolder)
+        foreach (var ingredient in newIngredients)
         {
-            FoodIngredientDO fi = new();
-            fi.IdIngredient = ingredient;
-            fi.IdFood = obj.Id;
+            FoodIngredientDO foodIngredient = new();
+            foodIngredient.IdIngredient = ingredient;
+            foodIngredient.IdFood = food.Id;
                 
-            apiFI.InserirAsync(fi);
+            apiFoodIngredient.InserirAsync(foodIngredient);
         }
         
-        await api.AlterarAsync(obj);
+        await apiFood.AlterarAsync(food);
         
         NavigationManager.NavigateTo("Foods");
+    }
+    
+    public void OptionClickEvent(string values, MouseEventArgs evnt)
+    {
+        if (evnt.CtrlKey)
+        {
+            if (!newIngredients.Contains(values))
+            {
+                newIngredients.Add(values);
+            }
+        }
     }
 }

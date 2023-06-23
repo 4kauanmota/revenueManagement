@@ -1,7 +1,8 @@
 ﻿main{
-    height: 91vh;
+    height: 98vh;
     padding: 1.1rem 0 0 2rem;
     margin: 0 20px 0 20px;
+    overflow: auto;
 }
 
 input, select, button, a{
@@ -10,5 +11,10 @@ input, select, button, a{
 
 select{
     width: 100%;
+}
+
+.ingredients-organization{
+    display: flex;
+    justify-content: space-evenly;
 }
 
