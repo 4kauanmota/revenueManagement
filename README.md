@@ -41,8 +41,6 @@
 + `dotnet run --project CadastroFoodApi`
 + `dotnet run --project CadastroFoodWasm`
 
-░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
 #### Cloning project
 First you will need to open the terminal in the folder where you want to clone this project, and then, you paste this code 
 ```
@@ -76,5 +74,5 @@ dotnet run --project CadastroFoodWasm
 ---
 
 # 📝 **Authors**
-[Kauan Soares Mota](https://github.com/4kauanmota)
+[Kauan Soares Mota](https://github.com/4kauanmota) <br>
 [Johnnick F. Landim](https://github.com/johnnickjf)
