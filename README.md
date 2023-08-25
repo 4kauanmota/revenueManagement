@@ -41,13 +41,13 @@
 + `dotnet run --project CadastroFoodApi`
 + `dotnet run --project CadastroFoodWasm`
 
-#### Cloning project
+### Cloning project
 First you will need to open the terminal in the folder where you want to clone this project, and then, you paste this code 
 ```
 git clone https://github.com/4kauanmota/revenueManagement .
 ```
 
-#### Creating database
+### Creating database
 In [MYSQL WORKBENCH](https://www.mysql.com/products/workbench/) you will paste this command to create project database
 ```
 create table food ( Id varchar(100) null, Name varchar(100) null, Description varchar(255) null, Weight double null, Time double null, Preparation varchar(100) null );
@@ -58,7 +58,7 @@ create table ingredient ( Id varchar(100) null, Name varchar(80) null, Weight do
 ```
 You can modify connection settings in CadastroFoodApi > DAOs > AutoDAO.cs. But, if you don't want that, you will need to create a database user with this informations: `user: aluno` `password: aluno` in a database named `icomida`
 
-#### Running project
+### Running project
 To run the project you just need to enter this command in the project terminal
 ```
 dotnet run --project CadastroFoodApi
