@@ -1,4 +1,4 @@
-![Project Stars](https://img.shields.io/github/stars/4kauanmota/revenueManagement?color=1e90ff) ![Project Commits Week](https://img.shields.io/github/commit-activity/w/4kauanmota/revenueManagement?color=1e90ff)
+![Project Stars](https://img.shields.io/github/stars/4kauanmota/revenueManagement-WEB?color=1e90ff) ![Project Commits Week](https://img.shields.io/github/commit-activity/w/4kauanmota/revenueManagement?color=1e90ff)
 
 # 📄 **Informations**
 **This project was made for a university challenge, the topic is about create a site using [C#](https://learn.microsoft.com/pt-br/dotnet/csharp/tour-of-csharp/) with [WEB ASSEMBLY](https://webassembly.org/)**
