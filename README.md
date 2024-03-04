@@ -37,7 +37,7 @@
 + [MYSQL WORKBENCH](https://www.mysql.com/products/workbench/)
 
 ### Codes
-+ `git clone https://github.com/4kauanmota/revenueManagement .`
++ `git clone https://github.com/4kauanmota/revenueManagement-WEB .`
 + `dotnet run --project CadastroFoodApi`
 + `dotnet run --project CadastroFoodWasm`
 
@@ -46,7 +46,7 @@
 ### 1. Cloning project
 First you will need to open the terminal in the folder where you want to clone this project, and then, you paste this code 
 ```
-git clone https://github.com/4kauanmota/revenueManagement .
+git clone https://github.com/4kauanmota/revenueManagement-WEB .
 ```
 
 ### 2. Creating database
